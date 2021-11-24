@@ -44,7 +44,13 @@ module.exports = {
             await collector.on('collect', async (i) => {
                 if (i.customId === 'VERIFICAR') {
                     const membro = guild.members.cache.get(i.user.id);
-                    membro.send({ embeds: [$veri] });
+                    membro.send({ embeds: [$veri] }).catch(() => {
+                        message.channel.send(`<@${i.user.id}> sua DM está trancada, por favor abra ela.`).then(() => {
+                            setTimeout((msg) => {
+                                msg.delete();
+                            }, 1000 * 10);
+                        });
+                    });
 
                     const himane = db.fetch(`CanalVerificar_${message.guild.id}`);
 
