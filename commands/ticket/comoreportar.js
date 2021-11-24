@@ -45,7 +45,9 @@ module.exports = {
             await collector.on('collect', (i) => {
                 if (i.customId === 'COMOR') {
                     const membro = guild.members.cache.get(i.user.id);
-                    membro.send({ embeds: [$embed] });
+                    membro.send({ embeds: [$embed] }).catch((err) => {
+                        console.log(err);
+                    });
                 }
             });
         };

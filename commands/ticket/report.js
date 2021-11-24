@@ -304,9 +304,13 @@ module.exports = {
                                                 .setColor('#ea11e6')
                                                 .setDescription('Envie um link de arquivo ou de um vídeo no Youtube.');
                                             await chonel.bulkDelete(1);
-                                            membro.send({
-                                                embeds: [$eas],
-                                            });
+                                            membro
+                                                .send({
+                                                    embeds: [$eas],
+                                                })
+                                                .catch((err) => {
+                                                    console.log(err);
+                                                });
                                         }
                                     });
                                 }
@@ -422,9 +426,13 @@ module.exports = {
                                                 .setColor('#ea11e6')
                                                 .setDescription('Envie um link de arquivo ou de um vídeo no Youtube.');
                                             await chonel.bulkDelete(1);
-                                            membro.send({
-                                                embeds: [$eas],
-                                            });
+                                            membro
+                                                .send({
+                                                    embeds: [$eas],
+                                                })
+                                                .catch((err) => {
+                                                    console.log(err);
+                                                });
                                         }
                                     });
                                 }

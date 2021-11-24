@@ -83,7 +83,9 @@ module.exports = {
                     await $collector.on('collect', async (u) => {
                         if (u.customId === 'SIM') {
                             if (membro.roles.cache.has(cargo.id)) {
-                                membro.send(`Você já esta verificado`);
+                                membro.send(`Você já esta verificado`).catch((err) => {
+                                    console.log(err);
+                                });
                             } else {
                                 if (!cargo) {
                                     message.channel.send(
@@ -95,12 +97,16 @@ module.exports = {
                                     .setColor('#ea11e6')
                                     .setTitle('A sua solicitação foi aceita!')
                                     .setDescription('Agora você pode utilizar o nosso servidor normalmente.');
-                                membro.send({ embeds: [$ver] });
+                                membro.send({ embeds: [$ver] }).catch((err) => {
+                                    console.log(err);
+                                });
                             }
                         }
                         if (u.customId === 'NAO') {
                             const membro = guild.members.cache.get(i.user.id);
-                            await membro.send(`Você não foi verificado, será expulso`);
+                            await membro.send(`Você não foi verificado, será expulso`).catch((err) => {
+                                console.log(err);
+                            });
                             membro.kick();
                         }
                     });
