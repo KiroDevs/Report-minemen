@@ -2,7 +2,7 @@ const { MessageEmbed, Permissions } = require('discord.js');
 
 module.exports = {
 	name: 'help',
-	aliases: [''],
+	aliases: ['h'],
 
 	async execute(client, message, args) {
 		const $o = async () => {
