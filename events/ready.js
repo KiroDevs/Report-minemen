@@ -6,14 +6,7 @@ module.exports = async (client, message, guild) => {
         `Logado ${client.user.username} \n Estou em ${client.guilds.cache.size} servidores com um total de ${client.users.cache.size} usuários.`,
     );
 
-    let presence = db.fetch(`SETPRESENCE`);
-    let status = db.fetch(`SETSTATUS`);
-
-    client.user.setStatus(`idle`);
-
-    client.user.setPresence({
-        activities: [{ name: `Pronto para punir os trouxas` }],
-    });
+    client.user.setStatus(`online`);
 
     client.on('messageCreate', (message) => {
         if (message.content.includes(client.user.id)) {

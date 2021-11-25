@@ -1,7 +1,7 @@
 const db = require('quick.db');
 
 module.exports = (client, message) => {
-    if (message.author.bot || message.channel.type === 'dm') {
+    if (message.channel.type === 'dm') {
         return;
     }
 

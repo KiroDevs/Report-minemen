@@ -7,7 +7,7 @@ module.exports = {
     aliases: [''],
 
     async execute(client, message, args) {
-        const $o = async () => {
+        async function $o() {
             if (!message.guild) {
                 return;
             }
@@ -112,7 +112,7 @@ module.exports = {
                     });
                 }
             });
-        };
+        }
         try {
             $o();
         } catch (err) {

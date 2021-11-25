@@ -157,11 +157,13 @@ module.exports = {
                         //fim
 
                         //base do codigo
+
                         await chonel.send({
                             content: `<@${i.user.id}>`,
                             embeds: [report1],
                             components: [row3],
                         });
+
                         //collector do botão de apagar o canal
                         $cho.on('collect', async (bed) => {
                             if (bed.customId === 'apagar') {
