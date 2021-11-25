@@ -1,23 +1,23 @@
 module.exports = {
-    name: 'clear',
-    aliases: ['limpar'],
+	name: 'clear',
+	aliases: ['limpar'],
 
-    async execute(client, message, args) {
-        const $o = async () => {
-            let messager = args[0];
+	async execute(client, message, args) {
+		const $o = async () => {
+			let messager = args[0];
 
-            if (!messager) {
-                message.delete();
-            }
+			if (!messager) {
+				message.delete();
+			}
 
-            message.channel.bulkDelete(messager);
-            message.channel.send(`Deletei **${args[0]}** mensagens`);
-        };
+			message.channel.bulkDelete(messager);
+			message.channel.send(`Deletei **${args[0]}** mensagens`);
+		};
 
-        try {
-            $o();
-        } catch (err) {
-            console.log(err);
-        }
-    },
+		try {
+			$o();
+		} catch (err) {
+			console.log(err);
+		}
+	},
 };

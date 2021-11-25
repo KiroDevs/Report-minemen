@@ -1,5 +1,5 @@
 {
-  "name": "mandy",
+  "name": "Minemen",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node index.js"
   },
-  "author": "Kiro & Nefasto",
+  "author": "Kiro & SrMkg",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^13.3.1",
