@@ -79,8 +79,8 @@ module.exports = {
 			);
 
 			const yesno = new MessageActionRow().addComponents(
-				new MessageButton().setCustomId('SIM').setStyle('PRIMARY').setLabel('Sim'),
-				new MessageButton().setCustomId('NAO').setStyle('PRIMARY').setLabel('Não'),
+				new MessageButton().setCustomId('SIM').setStyle('PRIMARY').setLabel('Aprovar'),
+				new MessageButton().setCustomId('NAO').setStyle('PRIMARY').setLabel('Negar'),
 			);
 
 			const row3 = new MessageActionRow().addComponents(
@@ -326,7 +326,7 @@ module.exports = {
 									$collector.on('collect', async (s) => {
 										$cha.stop();
 
-										if (s.content.startsWith('https:')) {
+										if (s.content) {
 											chonel.bulkDelete(5);
 
 											$collector.stop();
@@ -334,7 +334,7 @@ module.exports = {
 											const awairepo = new MessageEmbed()
 												.setColor('#ea11e6')
 												.setDescription(
-													`**<@${i.user.id}>,Seu report foi enviado, espere algum staff um aprovar**`,
+													`> Aguarde a revisão de algum Staffer. Caso sua denúncia seja aprovada, ela será redirecionada para o chonel banimentos`,
 												);
 
 											$embed.setTitle(`${u.content} foi reportado`);
